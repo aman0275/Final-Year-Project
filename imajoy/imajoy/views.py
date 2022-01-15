@@ -5,6 +5,8 @@ def index(request):
     params = {'name':'Aman','place':'Jab'}
     return render(request,'index.html',params)
 def about(request):
+    djtext = request.GET.get('text','default')
+    # for parameter passing through form
     return HttpResponse("hello about")
 
     
