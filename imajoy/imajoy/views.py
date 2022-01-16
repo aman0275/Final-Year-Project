@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def index(request):
     params = {'name':'Aman','place':'Jab'}
-    return render(request,'index.html',params)
+    return HttpResponse("hello about")
 def about(request):
     djtext = request.GET.get('text','default')
     # for parameter passing through form
