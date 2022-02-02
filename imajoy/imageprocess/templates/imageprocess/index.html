@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    {% load static %}
+    <link rel = 'stylesheet' type= 'text/css' href = {% static 'css/style.css' %}>
+    {% load livereload_tags %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+        IMAJOY
+    </title>
+   
+</head>
+
+<body class="bg-white box-border overflow-x-hidden">
+    <div class="first-page h-auto flex justify-center">
+        <div class="left-box flex justify-center text-xl" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <nav class="flex justify-evenly border-2">
+                <img src= {% static 'imageprocess/logos/ImJoy-logos_transparent.png' %} alt="logo" class="max-h-32 mx-4 my-2">
+                <ul class="py-14 px-20 flex justify-between space-x-8 text-orange-500">
+                    <li><button class="border-2 p-2 border-transparent">Home</button></li>
+                    <li><button class="border-2 p-2 border-transparent">About SuS</button></li>
+                    <li><button class="border-2 p-2">Contact Us</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right-box border-2 flex justify-center ">
+            <img src= {% static 'imageprocess/image/main.jpg' %} alt="logo" class="w-96 my-2 mt-8 rounded-3xl">
+        </nav>
+    </div>
+</body>
+{% livereload_script %}
+
+
+
