@@ -13,17 +13,26 @@
 
 <body class="bg-white box-border overflow-x-hidden">
     <div class="first-page h-auto flex justify-center">
-        <div class="left-box flex justify-center text-xl" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-            <nav class="flex justify-evenly border-2">
+        <div class="left-box flex-col text-xl" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <nav class="flex justify-evenly ">
                 <img src= {% static 'imageprocess/logos/ImJoy-logos_transparent.png' %} alt="logo" class="max-h-32 mx-4 my-2">
                 <ul class="py-14 px-20 flex justify-between space-x-8 text-orange-500">
                     <li><button class="border-2 p-2 border-transparent">Home</button></li>
                     <li><button class="border-2 p-2 border-transparent">About SuS</button></li>
-                    <li><button class="border-2 p-2">Contact Us</button></li>
+                    <li><button class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition hover:bg-orange-500 hover:text-lime-50 hover:delay-100">Contact Us</button></li>
                 </ul>
             </nav>
+            <div class="text">
+                <div class="title-text text-5xl my-6 font-bold tracking-wider">Coloring With</div>
+                <div class="title-text text-5xl my-3 font-bold tracking-wider">Excitement</div>
+                <div class="title-text text-5xl font-bold tracking-wider">Try <span class="text-orange-500 font-bold text-8xl">ImJoy</span></div>
+            </div> 
+            <div class="butt-text mt-16">
+                <button class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition bg-orange-500 text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
+                <span class="text-gray-500"> Why ImJoy ?</span>
+            </div> 
         </div>
-        <div class="right-box border-2 flex justify-center ">
+        <div class="right-box flex justify-center ">
             <img src= {% static 'imageprocess/image/main.jpg' %} alt="logo" class="w-96 my-2 mt-8 rounded-3xl">
         </nav>
     </div>
