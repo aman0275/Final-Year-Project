@@ -28,7 +28,26 @@
                 <div class="title-text text-5xl font-bold tracking-wider">Try <span class="text-orange-500 font-bold text-8xl">ImJoy</span></div>
             </div> 
             <div class="butt-text mt-16">
-                <button class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition bg-orange-500 text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
+
+                    <div class="form-group">
+                        {% block content %}  
+                        <form method="post" enctype="multipart/form-data">  
+                            {% csrf_token %}  
+                            {{ form.as_p }}  
+                            <button type="submit" class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition bg-orange-500 text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
+                        </form>  
+                      
+                        {% if img_obj %}  
+                            <h3>Succesfully uploaded : {{img_obj.caption}}</h3>  
+                            <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
+                        {% endif %}  
+                      
+                         {% endblock content %}
+
+                    </div>
+
+
+               
                 <span class="text-gray-500"> Why ImJoy ?</span>
             </div> 
         </div>
