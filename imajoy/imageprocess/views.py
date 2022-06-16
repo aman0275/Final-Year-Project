@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import UploadImage
 from imageprocess.forms import UserImage
+from .load import run
 
 
 # Create your views here.
@@ -19,5 +20,10 @@ def home(request):
     else:  
         form = UserImage()  
   
-
+    
     return render(request,'imageprocess/index.html',{'form':form})
+
+
+def test(request):
+        run()
+        return HttpResponse("testing")

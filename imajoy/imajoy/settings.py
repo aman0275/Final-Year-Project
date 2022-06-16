@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'livereload',
-    'imageprocess.apps.ImageprocessConfig'
+    'imageprocess.apps.ImageprocessConfig',
+    'django_extensions'
 ]
 
 TAILWIND_APP_NAME = 'imageprocess'
