@@ -1,0 +1,70 @@
+from time import sleep
+from process_video import run
+import time
+import cv2
+cap = cv2.VideoCapture("C:/Users/aman0/Downloads/video2.mp4")
+count = 0
+while cap.isOpened():
+    ret,frame = cap.read()
+    frame = cv2.resize(frame, (540, 380), fx = 0, fy = 0,interpolation = cv2.INTER_CUBIC)
+    # cv2.imshow('window-name', frame)
+   
+    cv2.imshow('window-name',  run(frame,count))
+    # cv2.imwrite("frame%d.jpg" % count, frame)
+    count = count + 1
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # importing the necessary libraries
+# import cv2
+# import numpy as np
+
+# # Creating a VideoCapture object to read the video
+# cap = cv2.VideoCapture("C:/Users/aman0/Downloads/video1.mp4")
+
+
+# # Loop until the end of the video
+# while (cap.isOpened()):
+
+# 	# Capture frame-by-frame
+# 	ret, frame = cap.read()
+# 	frame = cv2.resize(frame, (540, 380), fx = 0, fy = 0,
+# 						interpolation = cv2.INTER_CUBIC)
+
+# 	# Display the resulting frame
+# 	cv2.imshow('Frame', frame)
+
+# 	# conversion of BGR to grayscale is necessary to apply this operation
+# 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+# 	# adaptive thresholding to use different threshold
+# 	# values on different regions of the frame.
+# 	Thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+# 										cv2.THRESH_BINARY_INV, 11, 2)
+
+# 	cv2.imshow('Thresh', Thresh)
+# 	# define q as the exit button
+# 	if cv2.waitKey(25) & 0xFF == ord('q'):
+# 		break
+
+# # release the video capture object
+# cap.release()
+# # Closes all the windows currently opened.
+# cv2.destroyAllWindows()
