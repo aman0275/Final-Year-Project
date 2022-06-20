@@ -33,7 +33,7 @@
                         <form method="post" enctype="multipart/form-data" class="">  
                             {% csrf_token %}  
                             {{ form.as_p }}  
-                            <button type="submit" class="border-2 p-2 border-orange-600 rounded-2xl px-5 my-4 transition bg-orange-600 shadow-md text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
+                            <button type="submit" id="myButton" class="border-2 p-2 border-orange-600 rounded-2xl px-5 my-4 transition bg-orange-600 shadow-md text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
                         </form>  
                        
                       
@@ -41,7 +41,7 @@
             </div> 
         </div>
         <div class="right-box flex justify-center ">
-            <img src= {% static 'imageprocess/image/main.png' %} alt="logo" class="w-auto my-2 mt-8 rounded-3xl">
+            <img src= {% static 'imageprocess/image/main.png' %} alt="logo" id="myImg" class="w-auto my-2 mt-8 rounded-3xl">
         </div>    
     </div>
 

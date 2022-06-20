@@ -486,3 +486,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
+
+
+
+
+
+
+
+
+
+
+#myImg {
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.9;}
+
+
+#myButton{
+  transition: 0.3s;
+}
+
+#myButton:hover {
+  transform: scale(0.9);
+}
