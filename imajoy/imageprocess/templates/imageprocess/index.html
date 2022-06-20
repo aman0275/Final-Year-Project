@@ -12,48 +12,87 @@
 </head>
 
 <body class="bg-white box-border overflow-x-hidden">
-    <div class="first-page h-auto flex justify-center">
+    <div class="flex justify-between ml-48 mr-48" >
+        <div class="navbar  mt-10"><b class="text-xl">Colorista</b></div>
+        <div><img src= {% static 'imageprocess/image/logo.png' %} alt="logo" class="max-h-24 mx-4 my-2"></div>
+    </div>
+    <div class="first-page h-auto flex justify-center items-center">
         <div class="left-box flex-col text-xl" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-            <nav class="flex justify-evenly ">
-                <img src= {% static 'imageprocess/logos/ImJoy-logos_transparent.png' %} alt="logo" class="max-h-32 mx-4 my-2">
-                <ul class="py-14 px-20 flex justify-between space-x-8 text-orange-500">
-                    <li><button class="border-2 p-2 border-transparent">Home</button></li>
-                    <li><button class="border-2 p-2 border-transparent">About SuS</button></li>
-                    <li><button class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition hover:bg-orange-500 hover:text-lime-50 hover:delay-100">Contact Us</button></li>
-                </ul>
-            </nav>
+
             <div class="text">
-                <div class="title-text text-5xl my-6 font-bold tracking-wider">Coloring With</div>
-                <div class="title-text text-5xl my-3 font-bold tracking-wider">Excitement</div>
-                <div class="title-text text-5xl font-bold tracking-wider">Try <span class="text-orange-500 font-bold text-8xl">ImJoy</span></div>
+                <div class="title-text text-5xl mt-6 font-bold ">Bring your old</div>
+                <div class="title-text text-5xl mb-3 font-bold ">photos to life 🪶</div>
+                <div class="title-text text-xl text-gray-600 ">Upload your black and white photos and bring</div>
+                <div class="title-text text-xl text-gray-600 ">them to life by adding color to them magically</div>
+                <div class="title-text text-xl text-gray-600 "><b> <i>-It's free and simple to use!</i></b></div>
             </div> 
-            <div class="butt-text mt-16">
+            <div class="butt-text mt-6">
 
                     <div class="form-group">
                         {% block content %}  
-                        <form method="post" enctype="multipart/form-data">  
+                        <form method="post" enctype="multipart/form-data" class="">  
                             {% csrf_token %}  
                             {{ form.as_p }}  
-                            <button type="submit" class="border-2 p-2 border-orange-500 rounded-2xl px-5 transition bg-orange-500 text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
+                            <button type="submit" class="border-2 p-2 border-orange-600 rounded-2xl px-5 my-4 transition bg-orange-600 shadow-md text-lime-50 hover:bg-white hover:text-orange-500 hover:delay-100 mr-5">Upload Image</button>
                         </form>  
+                       
                       
-                        {% if img_obj %}  
-                            <h3>Succesfully uploaded : {{img_obj.caption}}</h3>  
-                            <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
-                        {% endif %}  
-                      
-                         {% endblock content %}
-
                     </div>
-
-
-               
-                <span class="text-gray-500"> Why ImJoy ?</span>
             </div> 
         </div>
         <div class="right-box flex justify-center ">
-            <img src= {% static 'imageprocess/image/main.jpg' %} alt="logo" class="w-96 my-2 mt-8 rounded-3xl">
-        </nav>
+            <img src= {% static 'imageprocess/image/main.png' %} alt="logo" class="w-auto my-2 mt-8 rounded-3xl">
+        </div>    
+    </div>
+
+    <div>
+
+        {% if img_obj %}  
+        <div class="flex justify-center items-center">
+            <img src="{% static "imageprocess/image/icon.png" %}" alt="My image" class="mb-3">
+        </div>
+        <div>
+            <div class="flex justify-evenly items-center">
+                <div>
+                    <div class="title-text text-2xl mt-6 font-bold">Succesfully uploaded :</div>  
+                    <div class="title-text text-xl text-gray-600 "> {{img_obj.caption}}</div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:350px" class="rounded-lg m-3"> 
+                </div>
+            </div>
+            <div class="flex justify-evenly items-center">
+                <div class="m-3">
+                    <div class="title-text text-2xl mt-6 font-bold text-center">Eccv16</div>
+                    <img src= {% static 'imageprocess/image/colored/1.jpg' %} alt="logo" style="max-height:350px" class="rounded-lg m-3">
+                </div>
+                <div class="m-3">
+                    <div class="title-text text-2xl mt-6 font-bold text-center">SigGraph17</div>
+                    <img src= {% static 'imageprocess/image/colored/2.jpg' %} alt="logo" style="max-height:350px" class="rounded-lg m-3">
+                </div>
+            </div>
+        </div>
+        {% endif %}  
+
+        {% endblock content %}
+    </div>
+    <div class="flex justify-center items-center">
+        <img src="{% static "imageprocess/image/icon.png" %}" alt="My image" class="mb-3">
+    </div>
+    <div class="flex justify-center items-center">
+        <img src="{% static "imageprocess/image/main2.png" %}" alt="My image" class="mb-3">
+    </div>
+    <div class="flex justify-center items-center">
+        <img src="{% static "imageprocess/image/main3.png" %}" alt="My image" class="mb-3">
+    </div>
+    <div class="flex justify-center items-center">
+        <img src="{% static "imageprocess/image/main4.png" %}" alt="My image" class="mb-4">
+    </div>
+    <div class="flex justify-center items-center">
+        <img src="{% static "imageprocess/image/main5.png" %}" alt="My image" class="mb-5">
+    </div>
+    <div class="h-40 bg-black flex justify-center items-center text-white text-4xl font-semibold">
+        Colorista
     </div>
 </body>
 {% livereload_script %}

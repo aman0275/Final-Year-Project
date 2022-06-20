@@ -14,8 +14,14 @@ def home(request):
             form.save()  
             # Getting the current instance object to display in the template  
             img_object = form.instance  
-            print(img_object.image.url)
+            print("heheheheheh")
+            print(img_object)
+            print(type(img_object))
             run(img_object.image.url)
+            # img_data = {
+            #     "img1":"C:/Users/aman0/Downloads/processed image/1.jpg",
+            #     "img2":"C:/Users/aman0/Downloads/processed image/2.jpg"
+            # }
             return render(request, 'imageprocess/index.html', {'form': form, 'img_obj': img_object})  
     else:  
         form = UserImage()  

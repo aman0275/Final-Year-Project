@@ -454,8 +454,9 @@ def run(img_url):
 
     # default size to process images is 256x256
     # grab L channel in both original ("orig") and resized ("rs") resolutions
+    
     # img = load_img("C:/Users/aman0/Downloads/bw.jpg")
-    img = load_img(img_url)
+    img = load_img("C:/Users/aman0/Downloads/fianl year project/Project/imajoy"+img_url)
     
 
     (tens_l_orig, tens_l_rs) = preprocess_img(img, HW=(256,256))
@@ -488,12 +489,14 @@ def run(img_url):
     plt.subplot(2,2,3)
     plt.imshow(out_img_eccv16)
     plt.imsave("C:/Users/aman0/Downloads/processed image/1.jpg",out_img_eccv16)
+    plt.imsave("C:/Users/aman0/Downloads/fianl year project/Project/imajoy/imageprocess/static/imageprocess/image/colored/1.jpg",out_img_eccv16)
     plt.title('Output (ECCV 16)')
     plt.axis('off')
 
     plt.subplot(2,2,4)
     plt.imshow(out_img_siggraph17)
     plt.imsave("C:/Users/aman0/Downloads/processed image/2.jpg",out_img_siggraph17)
+    plt.imsave("C:/Users/aman0/Downloads/fianl year project/Project/imajoy/imageprocess/static/imageprocess/image/colored/2.jpg",out_img_siggraph17)
     plt.title('Output (SIGGRAPH 17)')
     plt.axis('off')
     plt.show()
